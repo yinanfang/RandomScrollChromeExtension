@@ -7,4 +7,4 @@ setInterval(() => {
       chrome.tabs.sendMessage(currentTab.id, { action: "scroll" });
     }
   });
-}, Math.floor(Math.random() * 3000) + 3000);
+}, Math.floor(Math.random() * 5 * 1000) + 5 * 1000);
