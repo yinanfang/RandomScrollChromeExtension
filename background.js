@@ -1,4 +1,4 @@
-// Send message for action every 3+ seconds.
+// Send message for action every 1 seconds with jitter.
 setInterval(() => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     const currentTab = tabs[0];
@@ -7,4 +7,4 @@ setInterval(() => {
       chrome.tabs.sendMessage(currentTab.id, { action: "scroll" });
     }
   });
-}, Math.floor(Math.random() * 5 * 1000) + 5 * 1000);
+}, 1 * 1000 + Math.floor(Math.random() * 1 * 1000));
